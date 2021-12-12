@@ -1,10 +1,8 @@
 import React from 'react'
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import App from '../App';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
-
-afterEach(() => cleanup());
 
 describe('testing routes', () => {
   test('testing initial page', () => {
@@ -26,9 +24,11 @@ describe('testing routes', () => {
   });
 
   test('testing movie page', () => {
-    render(<MemoryRouter initialEntries={['/movie/1']}>
-      <App />
-    </MemoryRouter>);
+    act(() => {
+      render(<MemoryRouter initialEntries={['/movie/1']}>
+        <App />
+      </MemoryRouter>);
+    });
 
     expect(screen.getByTestId('movieContainer')).toBeInTheDocument();
 
