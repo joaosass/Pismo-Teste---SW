@@ -3,7 +3,7 @@ interface RomanProps {
 }
 
 const convertToRoman = (value: number) => {
-  if (!value) {
+  if (!value || !parseInt(value.toString()) || value < 0 || value % 1 !== 0) {
     return '';
   }
 

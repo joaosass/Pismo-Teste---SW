@@ -34,12 +34,13 @@ const Movie: React.FC = () => {
   const handleNavigate = () => {
     navigate('/');
   }
+
   const handleReload = () => {
     window.location.reload();
   }
 
   return (
-    <Container>
+    <Container data-testid="movieContainer">
       <Loading isVisible={isLoading} />
       {!isLoading && <>
         <Controls>
