@@ -3,8 +3,8 @@ import getMovies from '../../utils/getMovies';
 import { IMovie } from '../../types/IMovie';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
+import Container from '../../components/Container';
 import MovieCover from '../../components/MovieCover';
-import { Container } from './styles';
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
